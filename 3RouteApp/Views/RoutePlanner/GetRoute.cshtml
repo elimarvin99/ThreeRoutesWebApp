@@ -1,0 +1,22 @@
+﻿@model AddressModel
+    @{
+        Layout = null;
+    }
+
+<center>
+    <h2>Enter 3 addresses to find the shortest route between them</h2>
+@*this form gets us the city for our api*@
+@using (Html.BeginForm("GetRoute", "RoutePlanner", FormMethod.Get))
+    {
+        <label asp-for="City" class="control-label">Street Name</label>
+        <input type="text" name="Street" class="form-control" value="" />
+        <label asp-for="City" class="control-label">City</label>
+        <input type="text" name="City" class="form-control" value="" />
+        <input type="submit" value="Enter City" class="btn btn-primary" />
+    }
+    
+
+    <h3>The Shortest route between your locations is:</h3>
+    <p>@Model.</p>
+    
+</center>
